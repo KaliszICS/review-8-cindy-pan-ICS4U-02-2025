@@ -3,19 +3,36 @@ public class PracticeProblem {
 
 	public static String pluralize(String word)
 	{
-		String end = "y";
+		word = word.trim();
+		String end = "Y";
 		String endAgain = "ey";
 		String endLast = "ife";
-		if (word.substring(word.length()).equalsIgnoreCase(end)){
-			return "ies";
-		}
-		else if (word.substring((word.length()-3)).equalsIgnoreCase(endAgain)){
+
+		if (word.length()>=2){
+			if (word.substring(word.length()-2).equalsIgnoreCase(endAgain)){
 			return "eys";
 		}
+	
 		else if (word.substring(word.length()-3).equalsIgnoreCase(endLast)){
 			return "ives";
 		}
+		else if (word.substring((word.length()-1)).equalsIgnoreCase(end)){
+			return "ies";
+		}
 		else {
+			return "s";
+		}
+		}
+	 else if (word.length()>=1){
+		if (word.substring((word.length()-1)).equalsIgnoreCase(end)){
+			return "ies";
+		}
+		else {
+			return "s";
+		}
+	}
+	
+	else {
 			return "s";
 		}
 

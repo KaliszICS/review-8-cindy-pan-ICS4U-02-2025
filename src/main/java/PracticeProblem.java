@@ -33,15 +33,33 @@ public class PracticeProblem {
 		}
 		
 
-	public static String isLeapYear(int year){
-		if (year%4 == 0){
-			
+	
+	}
+
+	public static boolean isLeapYear(int year){
+		if (year%4 ==0){//step one
+			if (year%100==0){ //step two
+				if (year%400==0){ //step 3
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else { //step 2
+				return true;
+			}
 		}
-	}
+		else { //step 1
+			return false;
+		}
+	} 
 
 	}
 
+			
+		
 
 
 	//public static 
-}
+
